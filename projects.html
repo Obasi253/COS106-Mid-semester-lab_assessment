@@ -1,65 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Academic Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Academic Showcase</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
-    <header>
-        <h1>Practical Projects</h1>
-        <p>Featured Software & Web Development Builds</p>
-    </header>
-
+  <header>
+    <div class="logo">Obasi.dev</div>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="projects.html" class="active">Projects</a>
-        <a href="planner.html">Academic Planner</a>
-        <a href="contact.html">Contact</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <main>
-        <section>
-            <h2>Featured Portfolio Builds</h2>
-            <div class="grid">
-                
-                <div class="card">
-                    <div>
-                        <img src="https://picsum.photos/300/180?random=1" alt="AI Audio Assistant Screenshot">
-                        <h3>AI Audio Study Engine</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0.5rem 0;">A Python-backed script that converts study notes into multilingual audio study lessons using generative APIs.</p>
-                    </div>
-                    <a href="https://github.com/Obasi253" target="_blank" class="btn" style="margin-top: 1rem;">View Code Repository</a>
-                </div>
+  <main>
+    <section class="card floating">
+      <h1>Technical Projects & Lab Work</h1>
+      <p>
+        A showcase of lab assignments, terminal scripts, and web builds created during my computer science coursework.
+      </p>
+    </section>
 
-                <div class="card">
-                    <div>
-                        <img src="https://picsum.photos/300/180?random=2" alt="Eco Logistics System Screenshot">
-                        <h3>Eco-Tech Waste System</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0.5rem 0;">An environmental technology concept designed to streamline urban collection routing through localized notifications.</p>
-                    </div>
-                    <a href="https://github.com/Obasi253" target="_blank" class="btn" style="margin-top: 1rem;">Explore Architecture</a>
-                </div>
+    <!-- Unordered and Ordered Lists (Slide 20) -->
+    <section class="card">
+      <h2>Core Project Categorization</h2>
+      
+      <h3>1. Web Engineering Projects (Ordered List)</h3>
+      <ol>
+        <li>COS 106 Multi-Page Portfolio Website</li>
+        <li>Task Planner & DOM Manipulator</li>
+        <li>Interactive Contact Validation Interface</li>
+      </ol>
 
-                <div class="card">
-                    <div>
-                        <img src="https://picsum.photos/300/180?random=3" alt="Language App Screenshot">
-                        <h3>Indigenous Language App</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0.5rem 0;">An interactive web module prototype created to assist users in practicing regional Nigerian languages.</p>
-                    </div>
-                    <a href="https://github.com/Obasi253" target="_blank" class="btn" style="margin-top: 1rem;">View Project Specs</a>
-                </div>
+      <br>
 
-            </div>
-        </section>
-    </main>
+      <h3>2. Practical Tools & Automation (Unordered List)</h3>
+      <ul>
+        <li>VoicePulse AI Python Audio Lesson Generator</li>
+        <li>Google Cloud Micro-Credential Workflows</li>
+        <li>API Request Handler Scripts</li>
+      </ul>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 Obasi | Miva Open University</p>
-    </footer>
+    <!-- External Links and Image Links (Slide 42, 48, 49) -->
+    <section class="card">
+      <h2>Featured Code Repository</h2>
+      <p>
+        Click the preview image or external link below to open the official repository on GitHub:
+      </p>
+
+      <!-- Image Link Implementation (Slide 42) -->
+      <a href="https://github.com/Obasi253/COS106-Mid-semester-lab_assessment" target="_blank">
+        <img src="https://via.placeholder.com/900x300/111827/22d3ee?text=GitHub+Repository+Preview+-+Obasi253" alt="GitHub Repository Preview Banner">
+      </a>
+
+      <p style="margin-top: 1rem;">
+        <!-- External Link with target="_blank" (Slide 49) -->
+        <a href="https://github.com/Obasi253/COS106-Mid-semester-lab_assessment" target="_blank" class="btn">
+          Open Repository on GitHub (New Tab)
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Obasi. Built for COS 106 at Miva Open University.</p>
+  </footer>
 
 </body>
 </html>
