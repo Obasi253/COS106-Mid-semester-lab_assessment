@@ -1,61 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Academic Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Academic Inquiries</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
-    <header>
-        <h1>Contact Me</h1>
-        <p>Send a Direct Message</p>
-    </header>
-
+  <header>
+    <div class="logo">Obasi.dev</div>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="projects.html">Projects</a>
-        <a href="planner.html">Academic Planner</a>
-        <a href="contact.html" class="active">Contact</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <main>
-        <section>
-            <h2>Get In Touch</h2>
-            <div id="errorBox" style="color: var(--danger); font-weight: 600; margin-bottom: 1rem; font-size: 0.9rem;"></div>
+  <main>
+    <section class="card floating">
+      <h1>Academic & Professional Contact Form</h1>
+      <p>Feel free to reach out regarding academic discussions, student collaborations, or project reviews.</p>
+
+      <!-- Form Element with Action, Method POST, and File Upload Enctype (Slide 55, 56, 75) -->
+      <form id="contactForm" action="/submit-form" method="post" enctype="multipart/form-data">
+
+        <!-- Accessibility Grouping with Fieldset & Legend (Slide 76) -->
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <!-- Label and Input Association with ID (Slide 59, 76) -->
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required minlength="3">
+
+          <!-- Email Input with HTML5 Validation (Slide 61, 73) -->
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="example@mivastudents.com" required>
+
+          <!-- Password Field for Security Demo (Slide 60) -->
+          <label for="pass">Academic Verification Passkey</label>
+          <input type="password" id="pass" name="pass" placeholder="Enter passkey" maxlength="15">
+        </fieldset>
+
+        <fieldset>
+          <legend>Inquiry Details & Preferences</legend>
+
+          <!-- Dropdown Select Menu (Slide 64) -->
+          <label for="category">Inquiry Category</label>
+          <select id="category" name="category">
+            <option value="general">General Academic Inquiry</option>
+            <option value="collaboration">Student Project Collaboration</option>
+            <option value="feedback">Portfolio Feedback</option>
+          </select>
+
+          <!-- Radio Buttons for Mutually Exclusive Choices (Slide 62) -->
+          <label>Preferred Communication Channel:</label>
+          <div style="margin-bottom: 1rem;">
+            <input type="radio" id="emailPref" name="channel" value="email" checked>
+            <label for="emailPref" style="display:inline;">Email</label> &nbsp;&nbsp;
             
-            <form id="contactForm" onsubmit="validateAndSend(event)">
-                <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" placeholder="Enter your name">
-                </div>
+            <input type="radio" id="portalPref" name="channel" value="portal">
+            <label for="portalPref" style="display:inline;">Miva Student Portal</label>
+          </div>
 
-                <div class="form-group">
-                    <label for="emailAddr">Email Address</label>
-                    <input type="text" id="emailAddr" placeholder="e.g., student@miva.edu.ng">
-                </div>
+          <!-- Checkboxes for Multiple Choices (Slide 63) -->
+          <label>Topics of Interest:</label>
+          <div style="margin-bottom: 1rem;">
+            <input type="checkbox" id="topic1" name="topics[]" value="webdev">
+            <label for="topic1" style="display:inline;">Web Development</label> &nbsp;&nbsp;
 
-                <div class="form-group">
-                    <label for="phoneNum">Phone Number</label>
-                    <input type="text" id="phoneNum" placeholder="e.g., 08012345678">
-                </div>
+            <input type="checkbox" id="topic2" name="topics[]" value="python">
+            <label for="topic2" style="display:inline;">Python / AI</label>
+          </div>
 
-                <div class="form-group">
-                    <label for="msgContent">Message</label>
-                    <textarea id="msgContent" rows="4" placeholder="Write your message here..."></textarea>
-                </div>
+          <!-- Textarea Multi-line Input (Slide 65) -->
+          <label for="message">Message Content *</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
 
-                <button type="submit" class="btn">Submit Form</button>
-            </form>
-        </section>
-    </main>
+          <!-- File Upload Input (Slide 75) -->
+          <label for="fileUpload">Attach Assignment Document (.pdf, .jpg, .png)</label>
+          <input type="file" id="fileUpload" name="fileUpload" accept=".pdf, .jpg, .png">
+        </fieldset>
 
-    <footer>
-        <p>&copy; 2026 Obasi | Miva Open University</p>
-    </footer>
+        <!-- Form Buttons (Slide 27, 66) -->
+        <button type="submit" class="btn">Submit Inquiry</button>
+        <button type="reset" class="btn" style="background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.4); color: #fca5a5; margin-left: 0.5rem;">Reset Form</button>
 
-    <script src="script.js"></script>
+      </form>
+
+      <p id="formStatus" style="margin-top: 1rem; font-weight: 600;"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Obasi. Built for COS 106 at Miva Open University.</p>
+  </footer>
+
 </body>
 </html>
