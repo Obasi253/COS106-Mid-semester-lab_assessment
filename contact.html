@@ -22,84 +22,47 @@
     </nav>
   </header>
 
-  <main>
+    <main>
     <section class="card floating">
-      <h1>Academic & Professional Contact Form</h1>
-      <p>Feel free to reach out regarding academic discussions, student collaborations, or project reviews.</p>
+      <h1>Connect & Collaborate</h1>
+      <p>I am open to discuss partnerships, research collaborations, internship opportunities, and tech projects.</p>
 
-      <!-- Form Element with Action, Method POST, and File Upload Enctype (Slide 55, 56, 75) -->
-      <form id="contactForm" action="/submit-form" method="post" enctype="multipart/form-data">
+      <!-- Direct Professional Social Link -->
+      <div style="margin-bottom: 2rem;">
+        <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" class="btn linkedin-btn">
+          Connect on LinkedIn &rarr;
+        </a>
+      </div>
 
-        <!-- Accessibility Grouping with Fieldset & Legend (Slide 76) -->
+      <form id="contactForm">
         <fieldset>
-          <legend>Personal Information</legend>
+          <legend>Contact Information</legend>
 
-          <!-- Label and Input Association with ID (Slide 59, 76) -->
-          <label for="fullName">Full Name *</label>
-          <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required minlength="3">
+          <label for="fullName">Your Full Name *</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter your name" required>
 
-          <!-- Email Input with HTML5 Validation (Slide 61, 73) -->
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" placeholder="example@mivastudents.com" required>
-
-          <!-- Password Field for Security Demo (Slide 60) -->
-          <label for="pass">Academic Verification Passkey</label>
-          <input type="password" id="pass" name="pass" placeholder="Enter passkey" maxlength="15">
+          <label for="email">Your Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="name@example.com" required>
         </fieldset>
 
         <fieldset>
-          <legend>Inquiry Details & Preferences</legend>
+          <legend>Inquiry Purpose</legend>
 
-          <!-- Dropdown Select Menu (Slide 64) -->
-          <label for="category">Inquiry Category</label>
-          <select id="category" name="category">
-            <option value="general">General Academic Inquiry</option>
-            <option value="collaboration">Student Project Collaboration</option>
-            <option value="feedback">Portfolio Feedback</option>
+          <label for="inquiryType">Reason for Outreach *</label>
+          <select id="inquiryType" name="inquiryType" required>
+            <option value="Partnership">Strategic Partnership</option>
+            <option value="Collaboration">Academic / Tech Collaboration</option>
+            <option value="Internship">Internship Opportunity</option>
+            <option value="Project">Software / AI Project Inquiry</option>
           </select>
 
-          <!-- Radio Buttons for Mutually Exclusive Choices (Slide 62) -->
-          <label>Preferred Communication Channel:</label>
-          <div style="margin-bottom: 1rem;">
-            <input type="radio" id="emailPref" name="channel" value="email" checked>
-            <label for="emailPref" style="display:inline;">Email</label> &nbsp;&nbsp;
-            
-            <input type="radio" id="portalPref" name="channel" value="portal">
-            <label for="portalPref" style="display:inline;">Miva Student Portal</label>
-          </div>
-
-          <!-- Checkboxes for Multiple Choices (Slide 63) -->
-          <label>Topics of Interest:</label>
-          <div style="margin-bottom: 1rem;">
-            <input type="checkbox" id="topic1" name="topics[]" value="webdev">
-            <label for="topic1" style="display:inline;">Web Development</label> &nbsp;&nbsp;
-
-            <input type="checkbox" id="topic2" name="topics[]" value="python">
-            <label for="topic2" style="display:inline;">Python / AI</label>
-          </div>
-
-          <!-- Textarea Multi-line Input (Slide 65) -->
-          <label for="message">Message Content *</label>
-          <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
-
-          <!-- File Upload Input (Slide 75) -->
-          <label for="fileUpload">Attach Assignment Document (.pdf, .jpg, .png)</label>
-          <input type="file" id="fileUpload" name="fileUpload" accept=".pdf, .jpg, .png">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="5" placeholder="Details about your proposed partnership, project, or opportunity..." required></textarea>
         </fieldset>
 
-        <!-- Form Buttons (Slide 27, 66) -->
-        <button type="submit" class="btn">Submit Inquiry</button>
-        <button type="reset" class="btn" style="background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.4); color: #fca5a5; margin-left: 0.5rem;">Reset Form</button>
-
+        <button type="submit" class="btn">Send Direct Email</button>
       </form>
 
       <p id="formStatus" style="margin-top: 1rem; font-weight: 600;"></p>
     </section>
   </main>
-
-  <footer>
-    <p>&copy; 2026 Obasi. Built for COS 106 at Miva Open University.</p>
-  </footer>
-
-</body>
-</html>
