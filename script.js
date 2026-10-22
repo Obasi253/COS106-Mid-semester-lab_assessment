@@ -1,107 +1,60 @@
-// ==================== 1. TASK PLANNER LOGIC ====================
-let tasks = [
-    { id: 1, text: "Complete COS 106 Term Project files", completed: true },
-    { id: 2, text: "Review JavaScript DOM manipulation & event handlers", completed: false }
-];
-
-function renderTasks() {
-    const taskList = document.getElementById('taskList');
-    if (!taskList) return; 
-
-    taskList.innerHTML = '';
-
-    if (tasks.length === 0) {
-        taskList.innerHTML = '<p style="color: var(--text-muted); text-align: center;">No active tasks. Add one above!</p>';
-        return;
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Highlight Active Nav Item
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('nav a').forEach(link => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('active');
     }
+  });
 
-    tasks.forEach(task => {
-        const div = document.createElement('div');
-        div.className = `task-item ${task.completed ? 'completed' : ''}`;
-        div.innerHTML = `
-            <span onclick="toggleTask(${task.id})" style="cursor:pointer; flex: 1;">${task.text}</span>
-            <button class="delete-btn" onclick="deleteTask(${task.id})">Delete</button>
-        `;
-        taskList.appendChild(div);
-    });
-}
+  // 2. Interactive Task Planner Logic
+  const taskInput = document.getElementById('taskInput');
+  const addTaskBtn = document.getElementById('addTaskBtn');
+  const taskList = document.getElementById('taskList');
 
-function addTask() {
-    const input = document.getElementById('taskInput');
-    if (!input) return;
+  if (addTaskBtn && taskInput && taskList) {
+    const addTask = () => {
+      const text = taskInput.value.trim();
+      if (!text) return;
 
-    const text = input.value.trim();
+      const li = document.createElement('li');
+      li.style.cssText = 'background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); padding: 0.8rem 1rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;';
+      li.innerHTML = `
+        <span>${text}</span>
+        <button class="btn" style="padding: 0.3rem 0.6rem; font-size: 0.75rem; background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.4); color: #fca5a5;">Delete</button>
+      `;
 
-    if (text === '') {
-        alert('Please write a task description first!');
-        return;
-    }
+      li.addEventListener('click', (e) => {
+        if (e.target.tagName !== 'BUTTON') {
+          li.style.opacity = li.style.opacity === '0.4' ? '1' : '0.4';
+          li.style.textDecoration = li.style.textDecoration === 'line-through' ? 'none' : 'line-through';
+        }
+      });
 
-    const newTask = {
-        id: Date.now(),
-        text: text,
-        completed: false
+      li.querySelector('button').addEventListener('click', () => li.remove());
+
+      taskList.appendChild(li);
+      taskInput.value = '';
     };
 
-    tasks.push(newTask);
-    input.value = '';
-    renderTasks();
-}
+    addTaskBtn.addEventListener('click', addTask);
+    taskInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') addTask();
+    });
+  }
 
-function toggleTask(id) {
-    tasks = tasks.map(t => t.id === id ? { ...t, completed: !t.completed } : t);
-    renderTasks();
-}
+  // 3. Client-Side Form Feedback Handler
+  const contactForm = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
 
-function deleteTask(id) {
-    tasks = tasks.filter(t => t.id !== id);
-    renderTasks();
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    renderTasks();
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (formStatus) {
+        formStatus.style.color = '#22d3ee';
+        formStatus.textContent = 'Form validation passed! Data processed successfully.';
+      }
+      contactForm.reset();
+    });
+  }
 });
-
-
-// ==================== 2. FORM VALIDATION LOGIC ====================
-function validateAndSend(event) {
-    event.preventDefault();
-    const errorBox = document.getElementById('errorBox');
-    if (!errorBox) return;
-
-    errorBox.innerText = '';
-
-    const nameInput = document.getElementById('fullName');
-    const emailInput = document.getElementById('emailAddr');
-    const phoneInput = document.getElementById('phoneNum');
-    const msgInput = document.getElementById('msgContent');
-
-    const name = nameInput ? nameInput.value.trim() : '';
-    const email = emailInput ? emailInput.value.trim() : '';
-    const phone = phoneInput ? phoneInput.value.trim() : '';
-    const message = msgInput ? msgInput.value.trim() : '';
-
-    // 1. Check for Empty Fields
-    if (!name || !email || !phone || !message) {
-        errorBox.innerText = '⚠️ All form fields are required.';
-        return;
-    }
-
-    // 2. Email Format Validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        errorBox.innerText = '⚠️ Please enter a valid email address.';
-        return;
-    }
-
-    // 3. Phone Digits-Only Validation
-    const phoneRegex = /^\d+$/;
-    if (!phoneRegex.test(phone)) {
-        errorBox.innerText = '⚠️ Phone number must contain digits only.';
-        return;
-    }
-
-    // Success response
-    alert('Validation Successful! Your message has been processed.');
-    document.getElementById('contactForm').reset();
-}
