@@ -1,51 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Portfolio | Homepage</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obasi | Computer Science Academic Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
-    <header>
-        <h1>Obasi's Academic Portfolio</h1>
-        <p>B.Sc. Computer Science | Miva Open University</p>
-    </header>
-
+  <!-- Header & Navigation Menu (Slide 30, 44) -->
+  <header>
+    <div class="logo">Obasi.dev</div>
     <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="projects.html">Projects</a>
-        <a href="planner.html">Academic Planner</a>
-        <a href="contact.html">Contact</a>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <main>
-        <section class="profile-card">
-            <img src="https://picsum.photos/200" alt="Student Profile Photo" class="profile-img">
-            <h2>Welcome to My Academic Workspace</h2>
-            <p>Hello! I am a 100-level Computer Science student exploring AI automation, web engineering, and autonomous workflows.</p>
-        </section>
+  <!-- Visible Content Body (Slide 15) -->
+  <main>
+    
+    <!-- Hero Floating Card (Slide 17, 18, 39) -->
+    <section class="card floating" id="overview">
+      <span class="badge">Computer Science Student</span>
+      <span class="badge">Miva Open University</span>
+      
+      <h1>Welcome to My Academic Workspace</h1>
+      
+      <p>
+        Hello! I am <strong>Obasi</strong>, a B.Sc. Computer Science student exploring <em>software development principles</em>, <u>web technologies</u>, and autonomous AI automation.
+      </p>
 
-        <section>
-            <h2>Brief Biography</h2>
-            <p>Driven by curiosity and hands-on execution, I focus on transforming software theories into functional mobile and web applications. This platform serves as a live record of my academic journey, practical implementations, and task management systems.</p>
-        </section>
+      <!-- Button Link (Slide 43) -->
+      <a href="#highlights"><button type="button" class="btn">Explore Highlights</button></a>
+      <a href="projects.html" class="btn" style="background: transparent; border: 1px solid var(--card-border); margin-left: 0.5rem;">View Projects</a>
+    </section>
 
-        <section>
-            <h2>Audio Introduction</h2>
-            <p style="margin-bottom: 0.8rem; color: var(--text-muted); font-size: 0.9rem;">Listen to a brief welcome note:</p>
-            <audio controls style="width: 100%;">
-                <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </section>
-    </main>
+    <!-- Specific Section Jump Anchor Target (Slide 47) -->
+    <section class="card" id="highlights">
+      <h2>Academic Focus & Coursework Summary</h2>
+      <p>
+        Below is a structured overview of my foundational coursework and technical focus areas:
+      </p>
 
-    <footer>
-        <p>&copy; 2026 Obasi | Miva Open University COS 106 Term Project</p>
-    </footer>
+      <!-- Table Element Implementation (Slide 25) -->
+      <table>
+        <thead>
+          <tr>
+            <th>Course Code</th>
+            <th>Course Title</th>
+            <th>Core Technologies & Topics</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>COS 106</td>
+            <td>Web Technologies</td>
+            <td>HTML5, CSS3, JavaScript, Forms, Accessibility</td>
+          </tr>
+          <tr>
+            <td>COS 101</td>
+            <td>Introduction to Computer Science</td>
+            <td>Algorithm Logic, Python Foundations, Data Types</td>
+          </tr>
+          <tr>
+            <td>MIVA-GC</td>
+            <td>Google Cloud Micro-Credential</td>
+            <td>Cloud Fundamentals, Infrastructure, Digital Transformation</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Media Elements Showcase (Slide 28) -->
+    <section class="card">
+      <h2>Audio & Video Media Demonstrations</h2>
+      <p>HTML5 provides built-in media elements for embedding audio and video content:</p>
+
+      <h3>Project Audio Note</h3>
+      <audio controls>
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <h3>Video Preview Placeholder</h3>
+      <video controls poster="https://via.placeholder.com/800x450/0f172a/6366f1?text=COS106+Demo+Video">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video element.
+      </video>
+    </section>
+
+  </main>
+
+  <!-- Semantic Footer (Slide 31) -->
+  <footer>
+    <p>&copy; 2026 Obasi. Built for COS 106 at Miva Open University.</p>
+  </footer>
 
 </body>
 </html>
+
