@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Academic Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Contact Me</h1>
+        <p>Send a Direct Message</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="planner.html">Academic Planner</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Get In Touch</h2>
+            <div id="errorBox" style="color: var(--danger); font-weight: 600; margin-bottom: 1rem; font-size: 0.9rem;"></div>
+            
+            <form id="contactForm" onsubmit="validateAndSend(event)">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="emailAddr">Email Address</label>
+                    <input type="text" id="emailAddr" placeholder="e.g., student@miva.edu.ng">
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneNum">Phone Number</label>
+                    <input type="text" id="phoneNum" placeholder="e.g., 08012345678">
+                </div>
+
+                <div class="form-group">
+                    <label for="msgContent">Message</label>
+                    <textarea id="msgContent" rows="4" placeholder="Write your message here..."></textarea>
+                </div>
+
+                <button type="submit" class="btn">Submit Form</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Obasi | Miva Open University</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
