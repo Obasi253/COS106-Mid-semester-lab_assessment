@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Planner | Task Manager</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Planner | Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
-    <header>
-        <h1>Academic Planner</h1>
-        <p>Interactive Study & Task Management System</p>
-    </header>
-
+  <header>
+    <div class="logo">Obasi.dev</div>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="projects.html">Projects</a>
-        <a href="planner.html" class="active">Academic Planner</a>
-        <a href="contact.html">Contact</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html" class="active">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <main>
-        <section>
-            <h2>Manage Coursework Tasks</h2>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Tap a task to mark it as completed, or hit delete to clear it.</p>
-            
-            <div class="planner-input">
-                <input type="text" id="taskInput" placeholder="Enter a new task (e.g., Study COS 106 DOM manipulation)...">
-                <button onclick="addTask()" class="btn">Add Task</button>
-            </div>
+  <main>
+    <section class="card floating">
+      <h1>Interactive Academic Study Planner</h1>
+      <p>Manage daily study targets, assignment deadlines, and lab tasks using client-side DOM manipulation.</p>
 
-            <div id="taskList">
-                <!-- JavaScript renders dynamic task cards here -->
-            </div>
-        </section>
-    </main>
+      <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+        <input type="text" id="taskInput" placeholder="Enter a study target (e.g. Complete COS 106 HTML assignment)" style="margin-bottom: 0;">
+        <button type="button" id="addTaskBtn" class="btn">Add Task</button>
+      </div>
 
-    <footer>
-        <p>&copy; 2026 Obasi | Miva Open University</p>
-    </footer>
+      <ul id="taskList" style="list-style: none; margin-top: 1.5rem;">
+        <!-- Dynamic Tasks appended via JavaScript -->
+      </ul>
+    </section>
+  </main>
 
-    <script src="script.js"></script>
+  <footer>
+    <p>&copy; 2026 Obasi. Built for COS 106 at Miva Open University.</p>
+  </footer>
+
 </body>
 </html>
+
