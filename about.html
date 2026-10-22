@@ -1,83 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Academic Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Academic Background</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
-    <header>
-        <h1>About Me</h1>
-        <p>Background, Aspirations & Technical Competencies</p>
-    </header>
-
+  <header>
+    <div class="logo">Obasi.dev</div>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About Me</a>
-        <a href="projects.html">Projects</a>
-        <a href="planner.html">Academic Planner</a>
-        <a href="contact.html">Contact</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <main>
-        <section>
-            <h2>Educational Background</h2>
-            <p>Currently pursuing a Bachelor of Science in Computer Science at Miva Open University, focusing on core computing principles, database architecture, and modern web technologies.</p>
-        </section>
+  <main>
+    <!-- Comment Demonstration (Slide 34) -->
+    <!-- This section contains the personal academic overview and definition list -->
+    
+    <section class="card floating">
+      <h1>About My Academic Journey</h1>
+      <p>
+        I am currently pursuing a Bachelor of Science in Computer Science through distance learning at Miva Open University.<br>
+        My goal is to develop structured, practical competence in software engineering, API mechanics, and modern web applications.
+      </p>
 
-        <section>
-            <h2>Career Aspirations</h2>
-            <p>Aiming to specialize as an AI Automation Engineer, designing scalable multi-step workflow systems, agentic architectures, and intuitive web interfaces.</p>
-        </section>
+      <!-- Line Break Demonstration (Slide 33) -->
+      <p>
+        Primary Location: Ikom, Cross River State, Nigeria.<br>
+        Study Format: Online / Distance Learning Workflows.
+      </p>
+    </section>
 
-        <section>
-            <h2>Technical Skills Matrix</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Category</th>
-                            <th>Technologies / Frameworks</th>
-                            <th>Level</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Web Development</td>
-                            <td>HTML5, CSS3, JavaScript (DOM)</td>
-                            <td>Intermediate</td>
-                        </tr>
-                        <tr>
-                            <td>Programming</td>
-                            <td>Python, API Integrations</td>
-                            <td>Core Fundamentals</td>
-                        </tr>
-                        <tr>
-                            <td>Workflow Automation</td>
-                            <td>Make.com, Zapier, Webhooks</td>
-                            <td>Intermediate</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+    <!-- Definition List Implementation (Slide 26) -->
+    <section class="card">
+      <h2>Technical Glossary & Definitions</h2>
+      <p>Key web technology terms defined according to course specifications:</p>
+      
+      <dl>
+        <dt>HTML (Hypertext Markup Language)</dt>
+        <dd>The standard markup language used to structure content on web pages.</dd>
+        
+        <dt>CSS (Cascading Style Sheets)</dt>
+        <dd>The style sheet language used to format visual layouts, colors, and responsive designs.</dd>
+        
+        <dt>API (Application Programming Interface)</dt>
+        <dd>A set of rules allowing software applications to communicate and exchange data.</dd>
+      </dl>
+    </section>
 
-        <section>
-            <h2>Hobbies & Interests</h2>
-            <ul>
-                <li>Exploring autonomous AI systems and prompt engineering</li>
-                <li>Fashion styling and structural outfit coordination</li>
-                <li>Vocal training and acoustic exercises</li>
-                <li>Watching basketball and high-achieving developer vlogs</li>
-            </ul>
-        </section>
-    </main>
+    <!-- Inline Frames (IFrame) Implementation (Slide 32) -->
+    <section class="card">
+      <h2>Embedded Resources (IFrame)</h2>
+      <p>Demonstration of an embedded inline frame loading an external map standard:</p>
 
-    <footer>
-        <p>&copy; 2026 Obasi | Miva Open University</p>
-    </footer>
+      <iframe src="https://maps.google.com/maps?q=Ikom%20Cross%20River%20Nigeria&t=&z=13&ie=UTF8&iwloc=&output=embed" height="300" allowfullscreen style="border:0;" aria-hidden="false"></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Obasi. Built for COS 106 at Miva Open University.</p>
+  </footer>
 
 </body>
 </html>
