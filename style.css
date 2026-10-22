@@ -766,3 +766,33 @@ footer {
   border-top: 1px solid var(--card-border);
   margin-top: 4rem;
 }
+
+/* Custom Button & Link Updates */
+.linkedin-btn {
+  background: #0077b5 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(0, 119, 181, 0.4) !important;
+}
+
+.linkedin-btn:hover {
+  background: #005582 !important;
+  box-shadow: 0 6px 20px rgba(0, 119, 181, 0.6) !important;
+}
+
+.repo-link {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.repo-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.project-item {
+  border-left: 2px solid var(--accent-glow);
+  padding-left: 1rem;
+}
